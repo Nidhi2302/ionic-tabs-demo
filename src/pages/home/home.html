@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="userForm" novalidate>
+    <ion-list>
+      <ion-item>
+        <ion-input type="text" placeholder="Full Name" formControlName="name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input type="text" placeholder="Address" formControlName="address" ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="DOB" formControlName="DOB" ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="Mobile Number" formControlName="mobileNumber" ></ion-input>
+      </ion-item>
+    </ion-list>
+    <hr/>
+    <button type="submit" ion-button color="theme-dark-blue-button" (click)="dbInitAndInsert(userForm.value)"
+      block [disabled]=!userForm.valid>Sign Up</button>
+  </form>
+</ion-content>
